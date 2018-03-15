@@ -1,4 +1,3 @@
-import urljoin = require ('url-join');
 import { Injectable, Inject } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { User } from './user.model';
@@ -8,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-
+import { urljoin } from 'url-join';
 @Injectable()
 export class AuthService {
     usersUrl: string;
