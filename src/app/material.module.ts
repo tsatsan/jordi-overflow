@@ -10,10 +10,10 @@ import {
     MatRadioModule,
     MatProgressSpinnerModule,
     MatMenuModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTabsModule
 
     } from '@angular/material';
-
 
 const modules = [
     MatToolbarModule,
@@ -26,7 +26,8 @@ const modules = [
     MatRadioModule,
     MatProgressSpinnerModule,
     MatMenuModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTabsModule
 
 ];
 

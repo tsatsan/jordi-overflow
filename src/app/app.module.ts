@@ -16,7 +16,7 @@ import { SigninScreenComponent } from './auth/signin-screen.component';
 import { SignupScreenComponent } from './auth/signup-screen.component';
 import { QuestionListComponent } from './question/question-list.component';
 import { QuestionFormComponent } from './question/question-form.component';
-
+import { QuestionScreenComponent } from './question/question-screen.component';
 import { AuthService } from './auth/auth.service';
 import { MomentModule } from 'angular2-moment';
 
@@ -30,7 +30,8 @@ import { Routing } from './app.routing';
     SigninScreenComponent,
     SignupScreenComponent,
     QuestionListComponent,
-    QuestionFormComponent
+    QuestionFormComponent,
+    QuestionScreenComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +41,7 @@ import { Routing } from './app.routing';
     FormsModule,
     ReactiveFormsModule,
     Routing,
-    HttpModule
-
+    HttpModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

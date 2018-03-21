@@ -7,7 +7,9 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-import { urljoin } from 'url-join';
+declare var require: any;
+const urljoin = require ('url-join');
+
 @Injectable()
 export class AuthService {
     usersUrl: string;
@@ -68,7 +70,7 @@ export class AuthService {
         showError(message) {
             this.snackBar.open(message, 'x', { duration: 2500});
         }
-        public hanleError = (error: any) => {
+        public handleError = (error: any) => {
             const { error: { name }, message } = error;
             if (name === 'TokenExpiredError') {
                 this.showError('Tu sesion ha expirado');

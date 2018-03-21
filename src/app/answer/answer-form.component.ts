@@ -37,8 +37,10 @@ export class AnswerFormComponent {
         this.questionService
             .addAnswer(answer)
             .subscribe(
-                a => this.question.answers.unshift(a),
-                this.authService.hanleError
+                a => {
+                    this.question.answers.unshift(a);
+            },
+            this.authService.handleError
         );
         form.reset();
     }

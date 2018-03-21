@@ -5,8 +5,7 @@ export class Answer {
     constructor (
         public description: string,
         public question: Question,
-        public createdAT?: Date,
+        public createdAt?: Date,
         public user?: User
     ) {}
-
 }

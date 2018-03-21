@@ -31,7 +31,7 @@ export class SignupScreenComponent  implements OnInit {
                 this.authService.signup(user)
                     .subscribe(
                         this.authService.login,
-                        this.authService.hanleError
+                        this.authService.handleError
                     );
             }
         }
