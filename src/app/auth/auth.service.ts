@@ -1,5 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
-import urljoin from 'url-join';
+declare var require: any;
+const urljoin = require ('url-join');
 import { environment } from '../../environments/environment';
 import { User } from './user.model';
 import { Http, Headers, Response } from '@angular/http';
