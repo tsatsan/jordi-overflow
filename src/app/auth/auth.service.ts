@@ -1,4 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
+import urljoin from 'url-join';
 import { environment } from '../../environments/environment';
 import { User } from './user.model';
 import { Http, Headers, Response } from '@angular/http';
@@ -7,8 +8,6 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-declare var require: any;
-const urljoin = require ('url-join');
 
 @Injectable()
 export class AuthService {
@@ -16,7 +15,7 @@ export class AuthService {
     currentUser?: User;
 
     constructor(private http: Http, private router: Router, public snackBar: MatSnackBar) {
-        this.usersUrl = urljoin(environment.apiUrl, 'auth');
+        this.usersUrl = urljoin('http://localhost:3000/api/', 'auth');
         if (this.isLoggedIn()) {
             const { userId, firstName, lastName, email } = JSON.parse(localStorage.getItem('user'));
             this.currentUser = new User(email, null, firstName, lastName, userId);
