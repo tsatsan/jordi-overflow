@@ -71,7 +71,7 @@ export class AuthService {
             this.snackBar.open(message, 'x', { duration: 2500});
         }
         public handleError = (error: any) => {
-            const { error: name, message } = error;
+            const { error: { name }, message } = error;
             if (name === 'TokenExpiredError') {
                 this.showError('Tu sesion ha expirado');
             } else if (name === 'JsonWebTokenError') {
