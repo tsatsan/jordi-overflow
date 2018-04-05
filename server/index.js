@@ -4,16 +4,16 @@ import app from './app'
 import mongoose from 'mongoose'
 import { mongoUrl, port } from './config'
 
-const debug = new Debug('platzi-overflow:root')
+
+const debug = new Debug('jordi-overflow:root')
 
 mongoose.Promise = global.Promise
 
 async function start() {
-  await mongoose.connect(mongoUrl)
+    await mongoose.connect(mongoUrl)
 
-  app.listen(port, () => {
+app.listen(port, () => {
     debug(`Server running at port ${port}`)
-  })
+    })
 }
-
 start()
