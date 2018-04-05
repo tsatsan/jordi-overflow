@@ -1,7 +1,7 @@
 import http from 'http'
 import Debug from 'debug'
 import app from './app'
-import mongoose from 'mongoose'
+import mongoose, { Mongoose } from 'mongoose'
 import { mongoUrl, port } from './config'
 
 
