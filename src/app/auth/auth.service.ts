@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 declare var require: any;
-const urljoin = require ('url-join');
+import urljoin from 'url-join';
 import { environment } from '../../environments/environment';
 import { User } from './user.model';
 import { Http, Headers, Response } from '@angular/http';
@@ -10,18 +10,19 @@ import 'rxjs/Rx';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 
+
 @Injectable()
 export class AuthService {
-    usersUrl: string;
-    currentUser?: User;
+  usersUrl: string;
+  currentUser?: User;
 
-    constructor(private http: Http, private router: Router, public snackBar: MatSnackBar) {
-        this.usersUrl = urljoin('http://localhost:3000/api/', 'auth');
-        if (this.isLoggedIn()) {
-            const { userId, firstName, lastName, email } = JSON.parse(localStorage.getItem('user'));
-            this.currentUser = new User(email, null, firstName, lastName, userId);
-        }
+  constructor(private http: Http, private router: Router, public snackBar: MatSnackBar) {
+    this.usersUrl = urljoin(environment.apiUrl, 'auth');
+    if (this.isLoggedIn()) {
+      const { userId, email, firstName, lastName } = JSON.parse(localStorage.getItem('user'));
+      this.currentUser = new User(email, null, firstName, lastName, userId);
     }
+  }
     signup(user: User) {
         const body = JSON.stringify(user);
         const headers = new Headers({ 'Content-type': 'application/json' });
