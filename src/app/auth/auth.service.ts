@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 declare var require: any;
-import urljoin from 'url-join';
+const urljoin = require ('url-join');
 import { environment } from '../../environments/environment';
 import { User } from './user.model';
 import { Http, Headers, Response } from '@angular/http';
@@ -9,7 +9,6 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-
 
 @Injectable()
 export class AuthService {
